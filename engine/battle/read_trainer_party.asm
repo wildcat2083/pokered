@@ -101,7 +101,7 @@ ReadTrainer:
 
 ; get trainer class number
 	ld a, [wCurOpponent]
-	sub 200
+	sub OPP_ID_OFFSET
 	ld b, a
 	ld hl, TeamMoves
 
@@ -116,7 +116,7 @@ ReadTrainer:
 
 ; no matches found. is this trainer champion rival?
 	ld a, b
-	cp SONY3
+	cp RIVAL3
 	jr z, .ChampionRival
 	jr .FinishUp ; nope
 .GiveTeamMoves
